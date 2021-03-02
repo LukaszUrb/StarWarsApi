@@ -1,0 +1,30 @@
+{
+  "name": "star-wars",
+  "version": "1.0.0",
+  "description": "Star Wars",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LukaszUrb/StarWarsApi"
+  },
+  "main": "index.js",
+  "scripts": {
+    "up": "mkdir -p data && cd ./docker && docker-compose up -d",
+    "stop": "cd ./docker && docker-compose stop",
+    "down": "cd ./docker && docker-compose down",
+    "restart": "cd ./docker && docker-compose down && docker-compose up -d",
+    "commit": "git-cz"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "commitizen": "4.0.3",
+    "cz-conventional-changelog": "3.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}

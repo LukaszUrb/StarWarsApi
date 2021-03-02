@@ -1,0 +1,23 @@
+{
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "cSpell.ignoreWords": [
+        "sourcemap",
+        "tslib"
+    ],
+    "cSpell.ignorePaths": [
+        "**/package-lock.json",
+        "**/node_modules/**",
+        "**/vscode-extension/**",
+        "**/.git/objects/**",
+        "**/.vscode/**",
+        "*.json",
+        "*.yml"
+    ],
+    "cSpell.words": [
+        "MGLT",
+        "MILLISEC"
+    ]
+}
