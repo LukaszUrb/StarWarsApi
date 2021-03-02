@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+  db:
+    env_file:
+      - .env
+    image: mongo
+    ports:
+      - '27017:27017'
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
+      MONGO_USERNAME: ${MONGO_APP_USER}
+      MONGO_PASSWORD: ${MONGO_APP_PASS}
+    volumes:
+      # - /data:/data/db
+      - ./mongo/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
+
+  cache:
+    env_file:
+      - .env
+    image: redis:alpine
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+    command: ['--requirepass "${REDIS_PASSWORD}"']
