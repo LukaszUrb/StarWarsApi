@@ -17,7 +17,14 @@
         "*.yml"
     ],
     "cSpell.words": [
-        "MGLT",
-        "MILLISEC"
+        "MILLISEC",
+        "bcryptjs",
+        "builtins",
+        "dockerize",
+        "envs",
+        "parens",
+        "postup",
+        "prebuild",
+        "resave"
     ]
 }
