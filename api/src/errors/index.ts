@@ -26,10 +26,26 @@ export class NotFound extends HttpError {
     }
 }
 
+export class Forbidden extends HttpError {
+    constructor(message = "Forbidden") {
+        super(message);
+
+        this.status = 403;
+    }
+}
+
 export class Unauthorized extends HttpError {
     constructor(message = "Unauthorized") {
         super(message);
 
         this.status = 401;
+    }
+}
+
+export class ExternalError extends HttpError {
+    constructor(message = "Unknown Error", statusCode = 500) {
+        super(`External API error: ${message}`);
+
+        this.status = statusCode;
     }
 }
