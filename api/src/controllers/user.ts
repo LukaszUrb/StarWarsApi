@@ -21,7 +21,7 @@ export const registerController: RequestHandler = async (req, res, next) => {
 
     logIn(req, user.id);
 
-    return res.json({ message: `The account for ${user.email} has been created. Now you are logged in!` });
+    return res.json({ message: `The account for ${user.email} has been created, your character ID is ${user.swCharacterId} :) Now you are logged in!` });
 };
 
 export const loginController: RequestHandler = async (req, res) => {
