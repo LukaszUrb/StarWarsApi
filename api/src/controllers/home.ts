@@ -1,5 +1,7 @@
 import { RequestHandler } from "express";
+import { User } from "../models";
 
 export const homeController: RequestHandler = async (req, res) => {
-    res.send(`Hello visitor`);
+    const user = await User.findById(req.session.userId);
+    res.send(`Hello ${user ? user.email : "visitor"}`);
 };
