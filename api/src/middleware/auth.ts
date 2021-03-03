@@ -13,7 +13,7 @@ export const guest = (req: Request, res: Response, next: NextFunction): void => 
 };
 
 export const auth = (req: Request, res: Response, next: NextFunction): void => {
-    if (!isLoggedIn(req)) return next(new BadRequest("Please log in!"));
+    if (!isLoggedIn(req)) return next(new Unauthorized("Please log in!"));
 
     return next();
 };

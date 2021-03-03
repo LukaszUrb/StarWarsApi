@@ -29,3 +29,13 @@ export const logOut = (req: Request, res: Response): Promise<void> => {
         });
     });
 };
+
+export const markAsVerified = async (user: UserDocument): Promise<void> => {
+    user.verifiedAt = new Date();
+    await user.save();
+};
+
+export const resetPassword = async (user: UserDocument, password: string): Promise<void> => {
+    user.password = password;
+    await user.save();
+};
