@@ -25,6 +25,7 @@
         "parens",
         "postup",
         "prebuild",
-        "resave"
+        "resave",
+        "starwars"
     ]
 }
