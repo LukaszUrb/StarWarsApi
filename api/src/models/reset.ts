@@ -16,7 +16,7 @@ interface PasswordResetModel extends Model<PasswordResetDocument> {
     hashedToken: (plaintextToken: string) => string;
 }
 
-const passwordResetSchema = new Schema(
+const passwordResetSchema = new Schema<PasswordResetDocument>(
     {
         user: {
             type: Schema.Types.ObjectId,

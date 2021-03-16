@@ -22,7 +22,7 @@ interface UserModel extends Model<UserDocument> {
     hasValidVerificationUrl: (path: string, query: any) => boolean;
 }
 
-const userSchema = new Schema(
+const userSchema = new Schema<UserDocument>(
     {
         email: { type: String, required: true },
         name: { type: String, required: true },
@@ -65,7 +65,7 @@ userSchema.statics.hasValidVerificationUrl = (path: string, query: any): boolean
 };
 
 userSchema.set("toJSON", {
-    transform: (doc, { __v, password, ...rest }, options) => rest
+    transform: (doc: UserDocument, { __v, password, ...rest }: { __v: number; password: string; rest: any[] }, options: any) => rest
 });
 
 export interface UserDocument extends ITSUser, Document { }
