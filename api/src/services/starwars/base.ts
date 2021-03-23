@@ -1,30 +1,13 @@
-import fetch, { Response } from "node-fetch";
-import { asArray } from "../../utils";
-import { ServiceUnavailable, ExternalError } from "../../errors";
+import { asArray, dataFetch } from "../../utils";
 import { redisCache } from "../../cache";
 
 export abstract class SWApi<TSerialized, TPayload> {
-    private _response: Response;
     protected _payload: TPayload;
 
     constructor() { }
 
     protected getIdFromUrl(data: string[] | string): number[] {
         return asArray(data).map(el => +el.match(/([0-9]+)/g)[0]);
-    }
-
-    private async fetch(url: string): Promise<void> {
-        try {
-            this._response = await fetch(url);
-        } catch (err) {
-            throw new ServiceUnavailable("External service SW API is unavailable.");
-        }
-
-        if (!this._response.ok) throw new ExternalError(this._response.statusText, this._response.status);
-    }
-
-    private async parse(): Promise<void> {
-        this._payload = await this._response.json();
     }
 
     private async fetchEntityAsync(id: number): Promise<TSerialized> {
@@ -35,8 +18,7 @@ export abstract class SWApi<TSerialized, TPayload> {
         if (cachedSWEntity) {
             return cachedSWEntity;
         } else {
-            await this.fetch(url);
-            await this.parse();
+            this._payload = await dataFetch<TPayload>(url);
             const newSWEntity = this.serialize();
             await redisCache.storeEntity(url, newSWEntity);
 
