@@ -5,7 +5,7 @@ import { APP_ORIGIN, APP_SECRET, BCRYPT_WORK_FACTOR, EMAIL_VERIFICATION_TIMEOUT 
 import { CHARACTER_MAX_ID, CHARACTER_MIN_ID } from "../config/starwars";
 import { randomFromRange } from "../utils";
 
-export interface ITSUser {
+export interface IUser {
     email: string;
     password: string;
     name: string;
@@ -68,5 +68,5 @@ userSchema.set("toJSON", {
     transform: (doc: UserDocument, { __v, password, ...rest }: { __v: number; password: string; rest: any[] }, options: any) => rest
 });
 
-export interface UserDocument extends ITSUser, Document { }
+export interface UserDocument extends IUser, Document { }
 export const User = model<UserDocument, UserModel>("User", userSchema);
