@@ -20,6 +20,7 @@ interface IPayloadSpecies {
 }
 
 export interface ISerializedSpecies {
+    id: number;
     name: string;
     classification: string;
     designation: string;
@@ -37,6 +38,7 @@ export interface ISerializedSpecies {
 class SWApiSpecies extends SWApi<ISerializedSpecies, IPayloadSpecies> {
     protected serialize(): ISerializedSpecies {
         return {
+            id: this.getIdFromUrl(this._payload.url)[0],
             name: this._payload.name,
             classification: this._payload.classification,
             designation: this._payload.designation,

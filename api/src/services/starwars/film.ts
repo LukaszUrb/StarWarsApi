@@ -19,6 +19,7 @@ interface IPayloadFilm {
 }
 
 export interface ISerializedFilm {
+    id: number;
     title: string;
     episode_id: number;
     opening_crawl: string;
@@ -35,6 +36,7 @@ export interface ISerializedFilm {
 class SWApiFilm extends SWApi<ISerializedFilm, IPayloadFilm> {
     protected serialize(): ISerializedFilm {
         return {
+            id: this.getIdFromUrl(this._payload.url)[0],
             title: this._payload.title,
             episode_id: this._payload.episode_id,
             opening_crawl: fixNewLines(this._payload.opening_crawl),

@@ -23,6 +23,7 @@ interface IPayloadStarship {
 }
 
 export interface ISerializedStarship {
+    id: number;
     name: string;
     model: string;
     manufacturer: string;
@@ -43,6 +44,7 @@ export interface ISerializedStarship {
 class SWApiStarship extends SWApi<ISerializedStarship, IPayloadStarship> {
     protected serialize(): ISerializedStarship {
         return {
+            id: this.getIdFromUrl(this._payload.url)[0],
             name: this._payload.name,
             model: this._payload.model,
             manufacturer: this._payload.manufacturer,

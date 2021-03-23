@@ -21,6 +21,7 @@ interface IPayloadPerson {
 }
 
 export interface ISerializedPerson {
+    id: number;
     name: string;
     height: number | string;
     mass: number | string;
@@ -39,6 +40,7 @@ export interface ISerializedPerson {
 class SWApiPerson extends SWApi<ISerializedPerson, IPayloadPerson> {
     protected serialize(): ISerializedPerson {
         return {
+            id: this.getIdFromUrl(this._payload.url)[0],
             name: this._payload.name,
             height: toNumber(this._payload.height),
             mass: toNumber(this._payload.mass),

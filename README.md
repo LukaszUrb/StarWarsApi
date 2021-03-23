@@ -190,6 +190,7 @@ curl https://lucasapp.pl/starwars/planets/{id} --cookie \
 
 #### ME
 ```js
+id: number;
 name: string;
 height: number | string;
 mass: number | string;
@@ -207,6 +208,7 @@ starships: number[];
 
 #### FILMS
 ```js
+id: number;
 title: string;
 episode_id: number;
 opening_crawl: string;
@@ -222,6 +224,7 @@ species: number[];
 
 #### SPECIES
 ```js
+id: number;
 name: string;
 classification: string;
 designation: string;
@@ -239,6 +242,7 @@ films: number[];
 
 #### VEHICLES
 ```js
+id: number;
 name: string;
 model: string;
 manufacturer: string;
@@ -257,6 +261,7 @@ films: number[];
 
 #### STARSHIPS
 ```js
+id: number;
 name: string;
 model: string;
 manufacturer: string;
@@ -276,6 +281,7 @@ films: number[];
 
 #### PLANETS
 ```js
+id: number;
 name: string;
 rotation_period: number | string;
 orbital_period: number | string;

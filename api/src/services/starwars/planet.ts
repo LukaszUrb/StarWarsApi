@@ -19,6 +19,7 @@ interface IPayloadPlanet {
 }
 
 export interface ISerializedPlanet {
+    id: number;
     name: string;
     rotation_period: number | string;
     orbital_period: number | string;
@@ -35,6 +36,7 @@ export interface ISerializedPlanet {
 class SWApiPlanet extends SWApi<ISerializedPlanet, IPayloadPlanet> {
     protected serialize(): ISerializedPlanet {
         return {
+            id: this.getIdFromUrl(this._payload.url)[0],
             name: this._payload.name,
             rotation_period: toNumber(this._payload.rotation_period),
             orbital_period: toNumber(this._payload.orbital_period),

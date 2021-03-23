@@ -21,6 +21,7 @@ interface IPayloadVehicle {
 }
 
 export interface ISerializedVehicle {
+    id: number;
     name: string;
     model: string;
     manufacturer: string;
@@ -39,6 +40,7 @@ export interface ISerializedVehicle {
 class SWAPiVehicle extends SWApi<ISerializedVehicle, IPayloadVehicle> {
     protected serialize(): ISerializedVehicle {
         return {
+            id: this.getIdFromUrl(this._payload.url)[0],
             name: this._payload.name,
             model: this._payload.model,
             manufacturer: this._payload.manufacturer,
