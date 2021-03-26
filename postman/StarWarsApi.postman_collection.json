@@ -1,0 +1,549 @@
+{
+	"info": {
+		"_postman_id": "e5dfbfef-dcfd-4c68-9ea6-eccd4e1d54d8",
+		"name": "StarWarsApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"test260@gmail.com\",\n    \"name\" : \"test260\",\n    \"password\" : \"dgsdgsdg343Fef#\",\n    \"passwordConfirmation\" : \"dgsdgsdg343Fef#\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login as test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"test@swapi.com\",\n    \"password\" : \"Test123$\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"test260@gmail.com\",\n    \"password\" : \"dgsdgsdg343Fef#\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/logout",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resend activation link",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"test260@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/email/resend",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"email",
+						"resend"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify email",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"01mail01@mail.com\",\n    \"password\" : \"faaaaaaaA2aa\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/email/verify?id=601f282be4494038682699c8&token=66b39f8e94f888c6e3aefcef8de10f737066a7ea&expires=1612697836204&signature=b78c3d6888e8037309737158447d9b08009553b3ee0eaf14a68c14c872b95cfc",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"email",
+						"verify"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "601f282be4494038682699c8"
+						},
+						{
+							"key": "token",
+							"value": "66b39f8e94f888c6e3aefcef8de10f737066a7ea"
+						},
+						{
+							"key": "expires",
+							"value": "1612697836204"
+						},
+						{
+							"key": "signature",
+							"value": "b78c3d6888e8037309737158447d9b08009553b3ee0eaf14a68c14c872b95cfc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Me",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/starwars/people/me",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"starwars",
+						"people",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Films",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/starwars/films/me",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"starwars",
+						"films",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Films ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/starwars/films/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"starwars",
+						"films",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Species",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/starwars/species/me",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"starwars",
+						"species",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Species ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/starwars/species/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"starwars",
+						"species",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vehicles",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/starwars/vehicles/me",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"starwars",
+						"vehicles",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vehicles ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/starwars/vehicles/14",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"starwars",
+						"vehicles",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Starships",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/starwars/starships/me",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"starwars",
+						"starships",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Starships ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/starwars/starships/40",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"starwars",
+						"starships",
+						"40"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Planets",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/starwars/planets/me",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"starwars",
+						"planets",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Planets ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/starwars/planets/28",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"starwars",
+						"planets",
+						"28"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"test260@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/password/forgot",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"password",
+						"forgot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit new password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\" : \"NewPass123!@\",\n    \"passwordConfirmation\" : \"NewPass123!@\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/password/submit?id=602577be8bec3d001ce790fe&token=472d62fc09eefc84d3f6fb42754013f8856e4ce154e187f9f0279daac2941b9a477f93e0ed758b74",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"password",
+						"submit"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "602577be8bec3d001ce790fe"
+						},
+						{
+							"key": "token",
+							"value": "472d62fc09eefc84d3f6fb42754013f8856e4ce154e187f9f0279daac2941b9a477f93e0ed758b74"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login with new pass",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"test260@gmail.com\",\n    \"password\" : \"NewPass123!@\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
