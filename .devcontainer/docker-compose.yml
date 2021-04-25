@@ -5,7 +5,7 @@ services:
     image: mongo:latest
     restart: unless-stopped
     volumes:
-      - mongodb-data:/data/db
+      # - mongodb-data:/data/db
       - ./mongo/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
