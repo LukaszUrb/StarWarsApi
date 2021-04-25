@@ -12,9 +12,6 @@ During the registration process the app draws one hero from `https://swapi.dev/`
 
 You can also get resources using a specific `id` but you only have permission to resources that are assigned to your character. For example: If your character comes from homeworld `id:1`, you can't fetch information about homeworld `id:2`.
 
-## Test this api in the production mode 
-#### https://lucasapp.pl/
-
 ## Technologies
   - Node.js + Express + TypeScript 
   - MongoDB 
