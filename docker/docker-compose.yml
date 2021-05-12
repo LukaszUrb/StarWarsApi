@@ -12,8 +12,8 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME} #I think this is not needed
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD} #I think this is not needed
       MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE} #I think this is not needed
-      MONGO_USERNAME: ${MONGO_APP_USER} #This too... just change standardize variables name!
-      MONGO_PASSWORD: ${MONGO_APP_PASS} #This too... just change standardize variables name!
+      MONGO_USERNAME: ${MONGO_APP_USER} #This too... just standardize variables name!
+      MONGO_PASSWORD: ${MONGO_APP_PASS} #This too... just standardize variables name!
     volumes:
       # - /data:/data/db
       - ./mongo/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
