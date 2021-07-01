@@ -7,5 +7,6 @@ export const {
 export const MONGO_OPTIONS: ConnectionOptions = {
     useNewUrlParser: true,
     useFindAndModify: true,
-    useCreateIndex: true
+    useCreateIndex: true,
+    useUnifiedTopology: true
 };
