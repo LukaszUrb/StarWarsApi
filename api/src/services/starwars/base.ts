@@ -1,7 +1,12 @@
-import { asArray, dataFetch } from "../../utils";
-import { redisCache } from "../../cache";
+import {asArray, dataFetch} from "../../utils";
+import {redisCache} from "../../cache";
 
-export abstract class SWApi<TSerialized, TPayload> {
+interface TIdentifiable { // zawęża przekazywane typy do tych które mają w sobie propertis id
+    id: number;
+    // name: string; // Film się nie kwalifikuje 
+}
+
+export abstract class SWApi<TSerialized extends TIdentifiable, TPayload> {
     protected _payload: TPayload;
 
     constructor() { }
